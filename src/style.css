@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply text-primary bg-light;
+}
+
+.container {
+  @apply max-w-screen-md mx-auto px-4 md:px-6;
+}
+
+/* FORMS */
+
+.form__label {
+  @apply block text-sm font-medium text-opacity-75 mb-2;
+}
+
+.form__control {
+  @apply block w-full text-sm rounded-md mb-4 focus:border-primary focus:ring-primary focus:outline-none focus:ring focus:ring-opacity-60;
+}
