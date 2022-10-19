@@ -1,9 +1,10 @@
 <script setup>
 import { ref } from "vue";
-import { logoutUser, useAuthState } from "../../firebase/useAuth";
+
 import { useRouter } from "vue-router";
 import Button from "./Button.vue";
 import Logout from "../icons/Logout.vue";
+import { logoutUser, useAuthState } from "../../componsables/useAuth";
 
 const { loggedIn } = useAuthState();
 

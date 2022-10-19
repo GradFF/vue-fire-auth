@@ -19,3 +19,7 @@ body {
 .form__control {
   @apply block w-full text-sm rounded-md mb-4 focus:border-primary focus:ring-primary focus:outline-none focus:ring focus:ring-opacity-60;
 }
+
+.form__error {
+  @apply text-danger text-sm mt-2;
+}

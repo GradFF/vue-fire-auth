@@ -1,5 +1,5 @@
 <script setup>
-import { useAuthState } from "../firebase/useAuth";
+import { useAuthState } from "../componsables/useAuth";
 import Navbar from "./shared/Navbar.vue";
 
 const { user } = useAuthState();

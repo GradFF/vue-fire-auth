@@ -1,5 +1,5 @@
 import { computed, onMounted, onUnmounted, ref } from "vue";
-import { auth } from "./index";
+import { auth } from "../utils/firebase";
 import {
   onAuthStateChanged,
   GoogleAuthProvider,

@@ -1,13 +1,15 @@
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import { loginWithEmailAndPassword } from "../firebase/useAuth";
+import { loginWithEmailAndPassword } from "../componsables/useAuth";
+
 import Button from "./shared/Button.vue";
+import TextInput from "./shared/TextInput.vue";
 
 const router = useRouter();
 
 const email = ref("secretariaffufrj@gmail.com");
-const password = ref("@farmacia1937");
+const password = ref("password");
 const loading = ref(false);
 
 const handleSubmit = async () => {
@@ -16,7 +18,7 @@ const handleSubmit = async () => {
     await loginWithEmailAndPassword(email.value, password.value);
     router.replace({ name: "admin" });
   } catch (error) {
-    console.log(error.message);
+    alert(error.message);
   } finally {
     loading.value = false;
   }
@@ -32,28 +34,21 @@ const handleSubmit = async () => {
       </p>
 
       <form @submit.prevent="handleSubmit">
-        <div class="mb-4">
-          <label for="email" class="form__label"> E-mail </label>
-          <input
-            type="email"
-            id="email"
-            class="form__control"
-            required
-            autofocus
-            v-model="email"
-          />
-        </div>
-
-        <div class="mb-4">
-          <label for="password" class="form__label"> Senha </label>
-          <input
-            type="password"
-            id="password"
-            class="form__control"
-            required
-            v-model="password"
-          />
-        </div>
+        <TextInput
+          label="E-mail"
+          type="email"
+          required
+          v-model.trim="email"
+          autofocus
+          class="mb-4"
+        />
+        <TextInput
+          label="Senha"
+          type="password"
+          required
+          v-model.trim="password"
+          class="mb-4"
+        />
 
         <Button
           class="bg-primary text-light w-full"

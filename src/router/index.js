@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import { getUserState } from "../firebase/useAuth";
+import { getUserState } from "../componsables/useAuth";
 import HomeView from "../components/HomeView.vue";
 
 const router = createRouter({

@@ -3,17 +3,16 @@ import Navbar from "./shared/Navbar.vue";
 import Button from "./shared/Button.vue";
 import Google from "./icons/Google.vue";
 import { useRouter } from "vue-router";
-import { loginWithGoogle } from "../firebase/useAuth";
+import { loginWithGoogle } from "../componsables/useAuth";
 
 const router = useRouter();
 
 const handleLogin = async () => {
   try {
-    const result = await loginWithGoogle();
-    console.log(result.user.uid);
+    await loginWithGoogle();
     router.replace({ name: "admin" });
   } catch (error) {
-    console.log(error.message);
+    alert(error.message);
   }
 };
 </script>
