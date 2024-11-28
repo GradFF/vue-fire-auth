@@ -1,6 +1,4 @@
 <script setup></script>
 <template>
-  <div class="">
-    <h1 class="text-primary text-3xl font-bold underline">Hello world!</h1>
-  </div>
+  <RouterView />
 </template>
