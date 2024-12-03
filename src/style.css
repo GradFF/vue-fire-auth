@@ -5,10 +5,39 @@
 @tailwind utilities;
 
 body {
-  @apply bg-gray-100 text-gray-800;
+  @apply bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-100;
   font-family: 'Poppins', sans-serif;
 }
 
 .container {
   @apply max-w-screen-lg mx-auto px-4 md:px-6 lg:px-8;
+}
+
+/* LINKS */
+
+.navbar-link {
+  @apply px-3 py-2 mx-3 mt-2 text-gray-700 transition-colors duration-300 transform rounded-md lg:mt-0 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700;
+}
+
+.navbar-link.router-link-exact-active,
+.navbar-link.router-link-active {
+  @apply bg-gray-200 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700;
+}
+
+/* BUTTONS */
+
+.btn {
+  @apply inline-flex items-center justify-center px-6 py-3 text-sm rounded shadow-sm transition-all duration-200 transform outline-none focus:active:scale-95 disabled:opacity-70 capitalize hover:bg-gray-100 dark:hover:bg-gray-700;
+}
+
+.btn-icon {
+  @apply size-10 p-0;
+}
+
+.btn-primary {
+  @apply text-white bg-blue-500 hover:bg-blue-400 focus:ring-blue-300;
+}
+
+.btn-secondary {
+  @apply border  dark:border-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600;
 }
